@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Inversiones | Claridad Financiera</title>
+    <meta name="description"
+        content="A professional, neumorphic investment portfolio template to track assets, dividends, and ROI.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        bg: {
+                            DEFAULT: '#EFF4EF', // Sage Green Tint Base
+                        },
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#64748B', // Slate Blue
+                            600: '#475569',
+                            900: '#0f172a',
+                        },
+                        sage: {
+                            100: '#E0E5E0',
+                            500: '#84A59D',
+                            600: '#6B8E86',
+                        }
+                    },
+                    boxShadow: {
+                        'neu-flat': '9px 9px 16px #cbd1cb, -9px -9px 16px #ffffff',
+                        'neu-pressed': 'inset 6px 6px 10px #cbd1cb, inset -6px -6px 10px #ffffff',
+                        'neu-float': '14px 14px 24px #cbd1cb, -14px -14px 24px #ffffff',
+                        'neu-icon': '5px 5px 10px #cbd1cb, -5px -5px 10px #ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #EFF4EF;
+            color: #475569;
+        }
+
+        /* Soft Element Base Class */
+        .neu-card {
+            background: #EFF4EF;
+            border-radius: 20px;
+            box-shadow: 9px 9px 16px #cbd1cb, -9px -9px 16px #ffffff;
+        }
+
+        .neu-btn {
+            background: #EFF4EF;
+            border-radius: 50px;
+            /* Pillow shape */
+            box-shadow: 7px 7px 14px #cbd1cb, -7px -7px 14px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .neu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 10px 10px 20px #cbd1cb, -10px -10px 20px #ffffff;
+        }
+
+        .neu-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 4px 4px 8px #cbd1cb, inset -4px -4px 8px #ffffff;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-[#EFF4EF]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Neumorphic Icon Placeholder -->
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-neu-icon text-sage-600">
+                    <i data-lucide="pie-chart"></i>
+                </div>
+                <span class="text-xl font-bold text-primary-600 tracking-tight">Plantillas</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-medium text-primary-600">
+                <a href="#features" class="hover:text-sage-600 transition-colors">Características</a>
+                <a href="#testimonials" class="hover:text-sage-600 transition-colors">Testimonios</a>
+            </div>
+            <button
+                class="bg-sage-600 hover:bg-sage-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg transition-all hover:-translate-y-0.5">
+                Obtener Plantilla
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <!-- Floating Neumorphic Elements (Decoration) -->
+        <div
+            class="absolute top-20 right-10 w-24 h-24 rounded-full shadow-neu-flat opacity-50 animate-bounce delay-700">
+        </div>
+        <div class="absolute top-40 left-10 w-16 h-16 rounded-full shadow-neu-flat opacity-30 animate-pulse"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left z-10">
+                <div class="inline-block px-4 py-1.5 rounded-full shadow-neu-pressed mb-6">
+                    <span class="text-sage-600 font-medium text-sm tracking-wide uppercase">Nueva Plantilla 2026</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-primary-600 mb-6 leading-tight">
+                    Alcanza tu <br>
+                    <span class="text-sage-600">Claridad Financiera</span>
+                </h1>
+                <p class="text-lg text-primary-500 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Deja de adivinar a dónde va tu dinero. Rastrea activos, dividendos y ROI en un espacio organizado
+                    diseñado para tu tranquilidad.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button
+                        class="neu-btn px-8 py-3.5 text-sage-600 font-bold tracking-wide flex items-center justify-center gap-2 group">
+                        Obtener Plantilla
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('videoModal').showModal()"
+                        class="px-8 py-3.5 rounded-full text-primary-500 font-medium hover:text-primary-900 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        Ver Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Visual (Mockup) -->
+            <div class="relative z-10 p-8">
+                <!-- Main Dashboard Card -->
+                <div
+                    class="neu-card p-6 md:p-8 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500 ease-out">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-primary-600 font-bold text-lg">Valor de Portafolio</h3>
+                            <p class="text-sm text-primary-500">Balance Total</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full shadow-neu-pressed flex items-center justify-center text-green-500">
+                            <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold text-primary-900 mb-2">$142,590.00</div>
+                    <div class="flex items-center gap-2 text-sm text-green-600 mb-8">
+                        <span class="px-2 py-0.5 rounded-md shadow-neu-flat bg-[#EFF4EF]">+12.5%</span>
+                        <span>vs mes anterior</span>
+                    </div>
+
+                    <!-- Fake Chart Bars -->
+                    <div class="flex items-end gap-3 h-32 px-2">
+                        <div class="flex-1 bg-sage-500 rounded-t-lg shadow-neu-flat h-1/2"></div>
+                        <div class="flex-1 bg-primary-500 rounded-t-lg shadow-neu-flat h-3/4"></div>
+                        <div class="flex-1 bg-sage-500 rounded-t-lg shadow-neu-flat h-full"></div>
+                        <div class="flex-1 bg-primary-500 rounded-t-lg shadow-neu-flat h-2/3"></div>
+                        <div class="flex-1 bg-sage-500 rounded-t-lg shadow-neu-flat h-4/5"></div>
+                    </div>
+                </div>
+
+                <!-- Floating Widget 1 -->
+                <div class="absolute -bottom-6 -left-6 md:left-0 neu-card p-4 flex items-center gap-3 animate-bounce"
+                    style="animation-duration: 3s;">
+                    <div
+                        class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 shadow-neu-pressed">
+                        <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-primary-500">Dividends</div>
+                        <div class="font-bold text-primary-600">+$340.50</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-600 mb-4">Todo lo Que Necesitas</h2>
+                <p class="text-primary-500 max-w-2xl mx-auto">Un ecosistema completo para tus inversiones, bellamente
+                    diseñado para hacer el seguimiento sin esfuerzo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1: Asset Allocation -->
+                <div class="neu-card p-8 group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 rounded-2xl shadow-neu-icon flex items-center justify-center text-sage-600 mb-6 group-hover:text-sage-500 transition-colors">
+                        <i data-lucide="pie-chart" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-600 mb-3">Asignación Inteligente</h3>
+                    <p class="text-primary-500 text-sm leading-relaxed mb-6">
+                        Visualiza tu diversificación. Calcula automáticamente porcentajes entre Acciones, ETFs, Cripto y
+                        Bienes Raíces.
+                    </p>
+                    <!-- Visual Widget -->
+                    <div
+                        class="w-full h-32 rounded-xl shadow-neu-pressed flex items-center justify-center relative overflow-hidden">
+                        <div class="w-20 h-20 rounded-full border-4 border-sage-500 border-t-transparent rotation-45">
+                        </div>
+                        <div class="absolute text-xs font-bold text-primary-500">Diversificado</div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Dividend Tracker -->
+                <div class="neu-card p-8 group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 rounded-2xl shadow-neu-icon flex items-center justify-center text-blue-500 mb-6 group-hover:text-blue-400 transition-colors">
+                        <i data-lucide="calendar" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-600 mb-3">Planeador de Dividendos</h3>
+                    <p class="text-primary-500 text-sm leading-relaxed mb-6">
+                        Rastrea pagos futuros. Ve crecer tus ingresos pasivos mes a mes con precisión.
+                    </p>
+                    <!-- Visual Widget -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center justify-between text-xs text-primary-500">
+                            <span>Apple Inc.</span>
+                            <span class="text-green-500 font-bold">+$12.00</span>
+                        </div>
+                        <div class="h-2 w-full bg-[#E0E5E0] rounded-full shadow-neu-pressed overflow-hidden">
+                            <div class="h-full bg-blue-400 w-3/4 rounded-full"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-primary-500">
+                            <span>Realty Income</span>
+                            <span class="text-green-500 font-bold">+$45.20</span>
+                        </div>
+                        <div class="h-2 w-full bg-[#E0E5E0] rounded-full shadow-neu-pressed overflow-hidden">
+                            <div class="h-full bg-sage-500 w-1/2 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: ROI Analytics -->
+                <div class="neu-card p-8 group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-14 h-14 rounded-2xl shadow-neu-icon flex items-center justify-center text-purple-500 mb-6 group-hover:text-purple-400 transition-colors">
+                        <i data-lucide="bar-chart-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-600 mb-3">ROI Real</h3>
+                    <p class="text-primary-500 text-sm leading-relaxed mb-6">
+                        Entiende tu rendimiento real. Retornos netos vs brutos, ajustados por inflación y comisiones.
+                    </p>
+                    <!-- Visual Widget -->
+                    <div
+                        class="w-full h-32 rounded-xl shadow-neu-pressed flex items-end justify-between px-4 pb-4 pt-8">
+                        <!-- CSS Graph Line approximation -->
+                        <div class="w-1.5 h-6 bg-purple-300 rounded-full"></div>
+                        <div class="w-1.5 h-10 bg-purple-300 rounded-full"></div>
+                        <div class="w-1.5 h-8 bg-purple-300 rounded-full"></div>
+                        <div class="w-1.5 h-16 bg-purple-400 rounded-full"></div>
+                        <div class="w-1.5 h-12 bg-purple-400 rounded-full"></div>
+                        <div class="w-1.5 h-20 bg-purple-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section id="testimonials" class="py-20 px-6 relative overflow-hidden bg-primary-50/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary-600">Confianza de Inversores</h2>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative neu-card p-10 md:p-16">
+                <div class="absolute top-0 right-0 p-10 opacity-10">
+                    <i data-lucide="quote" class="w-32 h-32 text-primary-500"></i>
+                </div>
+
+                <div id="slider-track" class="relative z-10 transition-opacity duration-300">
+                    <!-- Slide Content (injected by JS) -->
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center gap-4 mt-8 relative z-20">
+                    <button onclick="prevSlide()"
+                        class="w-10 h-10 rounded-full shadow-neu-flat flex items-center justify-center text-primary-500 hover:text-sage-600 active:shadow-neu-pressed transition-all">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="nextSlide()"
+                        class="w-10 h-10 rounded-full shadow-neu-flat flex items-center justify-center text-primary-500 hover:text-sage-600 active:shadow-neu-pressed transition-all">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-primary-600 text-center mb-12">Frequently Asked Questions</h2>
+
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <details class="group neu-card open:shadow-neu-pressed transition-all duration-300">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none text-primary-600 font-semibold marker:content-none">
+                        <span>¿Necesito tener Excel instalado?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform group-open:rotate-180 text-sage-600"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-primary-500 text-sm leading-relaxed">
+                        ¡No! Esta plantilla funciona perfectamente con Google Sheets (Gratis) y Microsoft Excel. Puedes
+                        acceder desde cualquier dispositivo.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group neu-card open:shadow-neu-pressed transition-all duration-300">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none text-primary-600 font-semibold marker:content-none">
+                        <span>¿Actualiza los precios de acciones automáticamente?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform group-open:rotate-180 text-sage-600"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-primary-500 text-sm leading-relaxed">
+                        Sí, usa funciones integradas (GOOGLEFINANCE para Sheets) para obtener precios en vivo (retraso
+                        de 15-20 min) de las principales acciones y ETFs.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group neu-card open:shadow-neu-pressed transition-all duration-300">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer list-none text-primary-600 font-semibold marker:content-none">
+                        <span>¿Es un pago único?</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform group-open:rotate-180 text-sage-600"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-primary-500 text-sm leading-relaxed">
+                        Absolutamente. Paga una vez y obtén acceso de por vida, incluyendo todas las actualizaciones
+                        futuras de la estructura de la plantilla.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-primary-500 text-sm">
+        <p>&copy; 2026 Plantillas. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="#" class="flex items-center gap-3 group">
+            <div
+                class="neu-card px-6 py-3 bg-white/80 backdrop-blur text-primary-600 font-bold shadow-neu-float group-hover:scale-105 transition-transform hidden md:block">
+                Obtener Plantilla
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-25"></div>
+                <div
+                    class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-white shadow-xl hover:bg-green-600 transition-colors relative z-10 cursor-pointer">
+                    <i data-lucide="message-circle" class="w-8 h-8"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Video Modal -->
+    <dialog id="videoModal"
+        class="backdrop:bg-slate-900/50 backdrop:backdrop-blur-sm bg-transparent p-0 overflow-hidden rounded-2xl shadow-2xl w-full max-w-4xl m-auto">
+        <div class="relative w-full aspect-video bg-black rounded-2xl overflow-hidden neu-card">
+            <button onclick="document.getElementById('videoModal').close()"
+                class="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-black/80 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?si=jx6AE5Ky8bLl20ol"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </dialog>
+
+    <!-- Initialize Icons & Modal Logic -->
+    <script>
+        lucide.createIcons();
+
+        // Slider Data
+        const testimonials = [
+            {
+                text: "La plantilla más limpia que he usado. Convirtió mi caos de hojas de cálculo en un tablero visualmente relajante. El <span class='text-sage-600 font-bold'>Rastreador de Dividendos</span> vale la pena por sí solo.",
+                name: "Sarah Jenkins",
+                role: "Inversora a Largo Plazo",
+                img: "https://ui-avatars.com/api/?name=Sarah+J&background=84A59D&color=fff"
+            },
+            {
+                text: "Finalmente, un diseño que no daña la vista. El diseño neumórfico no es solo bonito, me ayuda a concentrarme en los números que importan.",
+                name: "Mark T.",
+                role: "Entusiasta Cripto",
+                img: "https://ui-avatars.com/api/?name=Mark+T&background=64748B&color=fff"
+            },
+            {
+                text: "Estaba abrumada por otros softwares complejos. Esta plantilla me dio exactamente lo que necesitaba: Claridad y Simplicidad.",
+                name: "Elena R.",
+                role: "Dueña de Pequeño Negocio",
+                img: "https://ui-avatars.com/api/?name=Elena+R&background=6B8E86&color=fff"
+            }
+        ];
+
+        let currentSlide = 0;
+        const track = document.getElementById('slider-track');
+
+        function renderSlide() {
+            // Fade out
+            track.style.opacity = '0';
+
+            setTimeout(() => {
+                const t = testimonials[currentSlide];
+                track.innerHTML = `
+                    <div class="max-w-3xl mx-auto text-center">
+                         <div class="flex justify-center mb-6">
+                             <div class="flex gap-1 text-yellow-400">
+                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                 <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                             </div>
+                         </div>
+                         <p class="text-2xl md:text-3xl font-medium text-primary-600 mb-8 leading-snug">
+                             "${t.text}"
+                         </p>
+                         <div class="flex items-center justify-center gap-4">
+                             <div class="w-12 h-12 rounded-full overflow-hidden shadow-neu-flat border-2 border-[#EFF4EF]">
+                                 <img src="${t.img}" alt="${t.name}">
+                             </div>
+                             <div class="text-left">
+                                 <div class="font-bold text-primary-900">${t.name}</div>
+                                 <div class="text-sm text-primary-500">${t.role}</div>
+                             </div>
+                         </div>
+                     </div>
+                `;
+                lucide.createIcons(); // Re-init icons for stars
+                track.style.opacity = '1';
+            }, 300);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            renderSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+            renderSlide();
+        }
+
+        // Init
+        renderSlide();
+
+    </script>
+</body>
+
+</html>
