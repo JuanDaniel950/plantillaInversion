@@ -458,12 +458,39 @@
                         placeholder="Tu Nombre">
                 </div>
 
+                <!-- Email Input -->
+                <div class="space-y-1">
+                    <label for="email" class="text-sm font-semibold text-primary-600 pl-2">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full bg-[#EFF4EF] rounded-xl px-4 py-3 shadow-neu-pressed focus:outline-none focus:shadow-neu-pressed text-primary-600 placeholder-primary-500/50 border-none outline-none transition-all"
+                        placeholder="tu@email.com">
+                </div>
+
                 <!-- Phone Input -->
                 <div class="space-y-1">
                     <label for="phone" class="text-sm font-semibold text-primary-600 pl-2">Teléfono / WhatsApp</label>
                     <input type="tel" id="phone" name="phone" required
                         class="w-full bg-[#EFF4EF] rounded-xl px-4 py-3 shadow-neu-pressed focus:outline-none focus:shadow-neu-pressed text-primary-600 placeholder-primary-500/50 border-none outline-none transition-all"
                         placeholder="+57 300 123 4567">
+                </div>
+
+                <!-- Legal Checkbox -->
+                <div class="flex items-start gap-3 mt-4">
+                    <div class="relative flex items-center">
+                        <input type="checkbox" id="legalCheck" name="legal_accepted" required
+                            class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-slate-300 bg-[#EFF4EF] shadow-neu-pressed checked:border-sage-500 checked:bg-sage-500 transition-all">
+                        <i data-lucide="check"
+                            class="pointer-events-none absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100"></i>
+                    </div>
+                    <label for="legalCheck" class="text-xs text-primary-500 leading-tight">
+                        He leído y acepto la <button type="button"
+                            onclick="document.getElementById('privacyModal').showModal()"
+                            class="text-sage-600 font-bold hover:underline">Política de Privacidad</button> y los
+                        <button type="button" onclick="document.getElementById('termsModal').showModal()"
+                            class="text-sage-600 font-bold hover:underline">Términos y Condiciones</button>. Entiendo
+                        que mis datos serán tratados conforme a la Ley de Protección de Datos Personales (Habeas Data)
+                        de Colombia.
+                    </label>
                 </div>
 
                 <!-- Submit Button -->
@@ -476,6 +503,73 @@
                 <!-- Status Message -->
                 <p id="formStatus" class="text-center text-sm mt-4 hidden"></p>
             </form>
+        </div>
+    </dialog>
+
+    <!-- Privacy Policy Modal -->
+    <dialog id="privacyModal"
+        class="backdrop:bg-slate-900/50 backdrop:backdrop-blur-sm bg-transparent p-0 overflow-hidden rounded-2xl shadow-2xl w-full max-w-2xl m-auto">
+        <div class="neu-card p-8 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="document.getElementById('privacyModal').close()"
+                class="absolute top-4 right-4 text-primary-500 hover:text-sage-600 transition-colors z-10">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-primary-600 mb-4">Política de Tratamiento de Datos</h3>
+            <div class="text-primary-500 text-sm space-y-4 leading-relaxed">
+                <p>De conformidad con la Ley 1581 de 2012 (Ley de Habeas Data) y el Decreto 1377 de 2013 de Colombia,
+                    informamos que:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Responsable:</strong> El equipo de Plantillas FinClear (en adelante "El Proveedor").
+                    </li>
+                    <li><strong>Finalidad:</strong> Los datos recolectados (Nombre y Teléfono/WhatsApp) serán utilizados
+                        <strong>exclusivamente</strong> para contactar al usuario con el fin de entregar información
+                        sobre la Plantilla de Inversiones solicitada.
+                    </li>
+                    <li><strong>Confidencialidad:</strong> Sus datos <strong>NO</strong> serán vendidos, cedidos ni
+                        compartidos con terceros bajo ninguna circunstancia.</li>
+                    <li><strong>Derechos:</strong> Como titular, tiene derecho a conocer, actualizar, rectificar y
+                        solicitar la supresión de sus datos en cualquier momento enviando un correo a
+                        planillainversiones2@gmail.com.</li>
+                </ul>
+                <p class="font-bold">Al marcar la casilla en el formulario, usted autoriza de manera libre, previa,
+                    expresa e informada el tratamiento de sus datos para los fines mencionados.</p>
+            </div>
+            <div class="mt-6 text-center">
+                <button onclick="document.getElementById('privacyModal').close()"
+                    class="neu-btn px-6 py-2 text-sage-600 font-bold text-sm">Entendido</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Terms Modal -->
+    <dialog id="termsModal"
+        class="backdrop:bg-slate-900/50 backdrop:backdrop-blur-sm bg-transparent p-0 overflow-hidden rounded-2xl shadow-2xl w-full max-w-2xl m-auto">
+        <div class="neu-card p-8 relative max-h-[80vh] overflow-y-auto">
+            <button onclick="document.getElementById('termsModal').close()"
+                class="absolute top-4 right-4 text-primary-500 hover:text-sage-600 transition-colors z-10">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-primary-600 mb-4">Términos y Condiciones</h3>
+            <div class="text-primary-500 text-sm space-y-4 leading-relaxed">
+                <p>El uso de este sitio web y la adquisición de nuestros productos digitales implica la aceptación de
+                    los siguientes términos:</p>
+                <ol class="list-decimal pl-5 space-y-2">
+                    <li><strong>Producto Digital:</strong> La "Plantilla de Inversiones" es un archivo digital (Google
+                        Sheets/Excel). No se enviará ningún producto físico.</li>
+                    <li><strong>Uso Personal:</strong> La compra otorga una licencia de uso personal e intransferible.
+                        Está prohibida su reventa, distribución pública o comercialización sin autorización escrita.
+                    </li>
+                    <li><strong>Reembolsos:</strong> Debido a la naturaleza digital del producto, no ofrecemos
+                        reembolsos una vez que el archivo ha sido enviado o descargado, salvo defectos técnicos
+                        comprobables.</li>
+                    <li><strong>Soporte:</strong> Ofrecemos soporte básico post-venta para asegurar el correcto
+                        funcionamiento de la plantilla, pero no asesoría financiera personalizada.</li>
+                </ol>
+            </div>
+            <div class="mt-6 text-center">
+                <button onclick="document.getElementById('termsModal').close()"
+                    class="neu-btn px-6 py-2 text-sage-600 font-bold text-sm">Acepto</button>
+            </div>
         </div>
     </dialog>
 
@@ -573,6 +667,13 @@
                 lucide.createIcons();
 
                 const formData = new FormData(contactForm);
+
+                // Add Timestamp and Explicit Acceptance
+                const now = new Date();
+                const timestamp = now.toLocaleString('es-CO', { timeZone: 'America/Bogota' });
+                formData.append('Aceptación de Términos', `Aceptado el ${timestamp}`);
+                formData.append('Política Datos', 'Autorizado tratamiento de datos personales');
+
                 const data = Object.fromEntries(formData.entries());
 
                 try {
