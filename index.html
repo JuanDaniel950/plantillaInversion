@@ -100,7 +100,7 @@
             </div>
             <div class="hidden md:flex items-center gap-8 font-medium text-primary-600">
                 <a href="#features" class="hover:text-sage-600 transition-colors">Características</a>
-                <a href="#testimonials" class="hover:text-sage-600 transition-colors">Testimonios</a>
+                <!-- <a href="#testimonials" class="hover:text-sage-600 transition-colors">Testimonios</a> -->
             </div>
             <button onclick="document.getElementById('contactModal').showModal()"
                 class="bg-sage-600 hover:bg-sage-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg transition-all hover:-translate-y-0.5">
@@ -224,7 +224,8 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary-600 mb-3">Criptomonedas y Trading</h3>
                     <p class="text-primary-500 text-sm leading-relaxed">
-                        Módulos especializados para Trading de Criptomonedas e Inversiones en mercados globales.
+                        Pestañas inteligentes para Trading de Criptomonedas e Inversiones
+                        en mercados globales.
                     </p>
                 </div>
 
@@ -283,23 +284,19 @@
     </section>
 
     <!-- Testimonials Slider -->
-    <section id="testimonials" class="py-20 px-6 relative overflow-hidden bg-primary-50/30">
+    <!-- <section id="testimonials" class="py-20 px-6 relative overflow-hidden bg-primary-50/30">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-primary-600">Confianza de Inversores</h2>
             </div>
-
-            <!-- Slider Container -->
             <div class="relative neu-card p-10 md:p-16">
                 <div class="absolute top-0 right-0 p-10 opacity-10">
                     <i data-lucide="quote" class="w-32 h-32 text-primary-500"></i>
                 </div>
 
                 <div id="slider-track" class="relative z-10 transition-opacity duration-300">
-                    <!-- Slide Content (injected by JS) -->
                 </div>
 
-                <!-- Controls -->
                 <div class="flex justify-center gap-4 mt-8 relative z-20">
                     <button onclick="prevSlide()"
                         class="w-10 h-10 rounded-full shadow-neu-flat flex items-center justify-center text-primary-500 hover:text-sage-600 active:shadow-neu-pressed transition-all">
@@ -312,7 +309,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section id="faq" class="py-20 px-6">
@@ -330,7 +327,8 @@
                     </summary>
                     <div class="px-6 pb-6 text-primary-500 text-sm leading-relaxed">
                         ¡No! Esta plantilla funciona perfectamente con Google Sheets (Gratis) y Microsoft Excel. Puedes
-                        acceder desde cualquier dispositivo.
+                        acceder desde cualquier dispositivo. Tambien es compatible con archivos ODS, por lo que se puede
+                        ver y descargar en el celular utilizando este formato.
                     </div>
                 </details>
 
@@ -357,8 +355,8 @@
                             class="w-5 h-5 transition-transform group-open:rotate-180 text-sage-600"></i>
                     </summary>
                     <div class="px-6 pb-6 text-primary-500 text-sm leading-relaxed">
-                        Absolutamente. Paga una vez y obtén acceso de por vida, incluyendo todas las actualizaciones
-                        futuras de la estructura de la plantilla.
+                        Realiza un único pago y obtén acceso permanente a la plantilla. Ten en cuenta que las
+                        actualizaciones futuras no están incluidas.
                     </div>
                 </details>
             </div>
@@ -580,6 +578,7 @@
     <script>
         lucide.createIcons();
 
+        /*
         // Slider Data
         const testimonials = [
             {
@@ -653,6 +652,7 @@
 
         // Init
         renderSlide();
+        */
 
         // Contact Form Logic
         const contactForm = document.getElementById('contactForm');
