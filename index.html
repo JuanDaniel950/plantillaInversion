@@ -150,7 +150,7 @@
                     activos, dividendos y ROI en un espacio organizado.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="https://wa.me/573016411777?text=quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
+                    <a id="whatsapp-hero" href="https://wa.me/573016411777?text=quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
                         rel="noopener noreferrer"
                         class="neu-btn px-8 py-3.5 text-sage-600 font-bold tracking-wide flex items-center justify-center gap-2 group">
                         Quiero más información
@@ -414,7 +414,7 @@
 
     <!-- Floating CTA -->
     <div class="fixed bottom-8 right-8 z-50">
-        <a href="https://wa.me/573016411777?text=quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
+        <a id="whatsapp-floating" href="https://wa.me/573016411777?text=quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
             rel="noopener noreferrer" class="flex items-center gap-3 group">
             <div
                 class="neu-card px-6 py-3 bg-white/80 backdrop-blur text-primary-600 font-bold shadow-neu-float group-hover:scale-105 transition-transform hidden md:block">
@@ -708,6 +708,7 @@
                     });
 
                     if (response.ok) {
+                        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
                         formStatus.textContent = "¡Gracias! Te contactaremos pronto.";
                         formStatus.className = "text-center text-sm mt-4 text-green-600 font-medium block";
                         contactForm.reset();
@@ -723,6 +724,18 @@
                     submitBtn.disabled = false;
                     lucide.createIcons();
                 }
+            });
+        }
+        const waHero = document.getElementById('whatsapp-hero');
+        if (waHero && typeof waHero.addEventListener === 'function') {
+            waHero.addEventListener('click', function () {
+                if (typeof fbq === 'function') { fbq('trackCustom', 'WhatsAppClick', { placement: 'hero' }); }
+            });
+        }
+        const waFloating = document.getElementById('whatsapp-floating');
+        if (waFloating && typeof waFloating.addEventListener === 'function') {
+            waFloating.addEventListener('click', function () {
+                if (typeof fbq === 'function') { fbq('trackCustom', 'WhatsAppClick', { placement: 'floating' }); }
             });
         }
 
